@@ -19,7 +19,7 @@ namespace CheckoutKataDataFeed
 				new PromotionSchemes()
 				{
 					Name = "D",
-					Price = System.Convert.ToDecimal(27.5),
+					Price = System.Convert.ToDecimal(82.5),
 					PromotionType = 1,
 					Items = new PromotionalItem[1] {						
 						new PromotionalItem("D", 2)

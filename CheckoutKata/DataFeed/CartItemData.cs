@@ -8,16 +8,17 @@ namespace CheckoutKataDataFeed
         public static IDictionary<string, int> GetCartAItems()
         {
             IDictionary<string, int> productWithQuantity = new Dictionary<string, int>();
-            productWithQuantity.Add("A", 5);
-            productWithQuantity.Add("B", 5);
+            productWithQuantity.Add("A", 1);
+            productWithQuantity.Add("B", 1);
             productWithQuantity.Add("C", 1);
+            productWithQuantity.Add("D", 1);
             return productWithQuantity;
         }
 
         public static IDictionary<string, int> GetCartBItems()
         {
             IDictionary<string, int> productWithQuantity = new Dictionary<string, int>();
-            productWithQuantity.Add("A", 5);
+            productWithQuantity.Add("A", 1);
             productWithQuantity.Add("B", 5);
             productWithQuantity.Add("C", 1);
             productWithQuantity.Add("D", 1);
@@ -30,6 +31,18 @@ namespace CheckoutKataDataFeed
             productWithQuantity.Add("A", 1);
             productWithQuantity.Add("B", 1);
             productWithQuantity.Add("C", 1);
+            productWithQuantity.Add("D", 5);
+            return productWithQuantity;
+        }
+
+
+        public static IDictionary<string, int> GetCartDItems()
+        {
+            IDictionary<string, int> productWithQuantity = new Dictionary<string, int>();
+            productWithQuantity.Add("A", 2);
+            productWithQuantity.Add("B", 3);
+            productWithQuantity.Add("C", 1);
+            productWithQuantity.Add("D", 5);
             return productWithQuantity;
         }
     }
