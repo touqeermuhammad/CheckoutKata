@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace CheckoutKataModels
+{ 
     public class PromotionSchemes
     {
         public string Name { get; set; }

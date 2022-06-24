@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckoutKataModels", "Check
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckoutKaraDiscoutProviders", "CheckoutKaraDiscoutProviders\CheckoutKaraDiscoutProviders.csproj", "{AA6A592F-A7F6-407D-AB5B-3E70E8FC4FCE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckoutKataServices", "CheckoutKataServices\CheckoutKataServices.csproj", "{D15F2CF0-1E76-46C1-98D3-3002670F9DF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{AA6A592F-A7F6-407D-AB5B-3E70E8FC4FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA6A592F-A7F6-407D-AB5B-3E70E8FC4FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA6A592F-A7F6-407D-AB5B-3E70E8FC4FCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D15F2CF0-1E76-46C1-98D3-3002670F9DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D15F2CF0-1E76-46C1-98D3-3002670F9DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D15F2CF0-1E76-46C1-98D3-3002670F9DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D15F2CF0-1E76-46C1-98D3-3002670F9DF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
