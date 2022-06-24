@@ -6,10 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="PromotionCreator\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CheckoutKaraDiscoutProviders\CheckoutKaraDiscoutProviders.csproj" />
     <ProjectReference Include="..\CheckoutKataModels\CheckoutKataModels.csproj" />
   </ItemGroup>
