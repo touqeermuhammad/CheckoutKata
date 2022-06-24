@@ -13,43 +13,31 @@ namespace CheckoutKataDiscountProviders
         {
             this.promotion = promotion;
         }
-        public override decimal ApplyPromotion(Cart cart)
-        {
+		public override decimal ApplyPromotion(Cart cart)
+		{
 			decimal totalPrice = 0;
-			decimal totalPriceOfItemsNotSatisfiedPromotion = 0;
+			var cartItem = cart.Where(x => x.Product.SKU == promotion.PromotionItems[0].SKU).FirstOrDefault();
 
-			CartItem[] cartItems = cart.Where(x => promotion.PromotionItems.Where(y => (y.SKU == x.Product.SKU) && (y.Quantity <= x.Quantity)).Count() > 0).ToArray();
-
-			if (cartItems.Length == promotion.PromotionItems.Length)
+			if (cartItem != null && promotion.PromotionItems?.Length > 0)
 			{
 				decimal promotionPrice = promotion.PromotionPrice;
-				int noOfTimesPromotionApplies = 0;
+				int promotionQuantity = promotion.PromotionItems[0].Quantity;
 
-				foreach (var cartItem in cartItems)
+
+				if (promotionQuantity > 0 && (promotionQuantity < cartItem.Quantity))
 				{
-					var promotedItem = promotion.PromotionItems.Where(x => x.SKU == cartItem.Product.SKU).FirstOrDefault();
-					int noOfTimesPromotionAppliesForTheItem = 0;
+					int noOfTimesPromotionApplies = cartItem.Quantity / promotionQuantity;
+					int quantityPromotionNotApplied = cartItem.Quantity % promotionQuantity;
 
-					if (promotedItem != null)
-					{
-						noOfTimesPromotionAppliesForTheItem = cartItem.Quantity / promotedItem.Quantity;
-						totalPriceOfItemsNotSatisfiedPromotion += (cartItem.Quantity % promotedItem.Quantity) * cartItem.Product.Price;
-
-						if (noOfTimesPromotionApplies == 0 || (noOfTimesPromotionApplies > noOfTimesPromotionAppliesForTheItem))
-						{
-							noOfTimesPromotionApplies = noOfTimesPromotionAppliesForTheItem;
-						}
-					}
+					totalPrice = (noOfTimesPromotionApplies * promotionPrice) + (quantityPromotionNotApplied * cartItem.Product.Price);
 				}
-
-				totalPrice = totalPriceOfItemsNotSatisfiedPromotion + (noOfTimesPromotionApplies * promotion.PromotionPrice);
-			}
-			else
-			{
-				totalPrice = cartItems.Sum(x => x.Quantity * x.Product.Price);
+				else
+				{
+					totalPrice = cartItem.Quantity * cartItem.Product.Price;
+				}
 			}
 
 			return totalPrice;
 		}
-    }
+	}
 }
