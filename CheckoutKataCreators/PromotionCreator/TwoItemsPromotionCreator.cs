@@ -1,7 +1,7 @@
 ﻿using CheckoutKataModels;
 using CheckoutKataModels.Promotions;
 
-namespace PromotionEngine.Creators.PromotionCreator
+namespace CheckoutKataPromotionProviderCreator
 {
     public class TwoItemsPromotionCreator : PromotionCreator
     {
